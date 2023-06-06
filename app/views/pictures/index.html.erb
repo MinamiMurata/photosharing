@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Photos</h2>
+
+<div class="row justify-content-end">
+  <%= link_to 'New Post', new_picture_path, class: "mb-5 btn btn-danger btn-lg text-white" %>
+</div>
+
+<div class="row">
+  <% @pictures.each do |picture| %>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm card-body">
+        <p class="card-text"><%= link_to picture.user.name, user_path(picture.user.id)%></p>
+        <p class="bd-placeholder-img card-img-top"><%= image_tag(picture.image.url, width: "100%") %></p>
+        <div class="card-body">
+          <p class="card-text"><%= picture.content %></p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <% if picture.user_id == current_user.id %>
+                <%= link_to 'Show', picture, type: "button", class: "btn btn-outline-secondary" %>
+                <%= link_to 'Edit', edit_picture_path(picture), type: "button", class: "btn btn-outline-secondary" %>
+                <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, type: "button", class: "btn btn-outline-secondary" %>
+              <% else %>
+                <%= link_to 'Show', picture, type: "button", class: "btn btn-outline-secondary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted"><%= time_ago_in_words(picture.created_at) %></small>
+      </div>
+    </div>
+  <% end %>
+</div>
