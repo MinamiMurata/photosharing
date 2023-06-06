@@ -1,0 +1,15 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+
+<h1 class="row">Log in</h1>
+<%= form_with(scope: :session, url: sessions_path, local: true, class: "form-group") do |f| %>
+
+  <%= f.label :email, class: "mt-2" %>
+  <%= f.email_field :email, class: "form-control mt-2" %>
+
+  <%= f.label :password, class: "mt-2" %>
+  <%= f.password_field :password, class: "form-control mt-2" %>
+
+  <%= f.submit "Log in", class: "form-control mt-5 btn btn-danger btn-lg" %>
+<% end %>

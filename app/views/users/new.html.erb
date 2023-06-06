@@ -1,0 +1,32 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+
+<h1>Sign up</h1>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with(model: @user, local: true, class: "form-group") do |f| %>
+  <%= f.label :name, class: "mt-2" %>
+  <%= f.text_field :name, class: "form-control mt-2" %>
+
+  <%= f.label :email, class: "mt-2" %>
+  <%= f.email_field :email, class: "form-control mt-2" %>
+
+  <%= f.label :password, class: "mt-2" %>
+  <%= f.password_field :password, class: "form-control mt-2" %>
+
+  <%= f.label :password_confirmation, class: "mt-2" %>
+  <%= f.password_field :password_confirmation, class: "form-control mt-2" %>
+
+  <%= f.submit "Create my account", class: "form-control mt-5 btn btn-danger btn-lg" %>
+<% end %>
