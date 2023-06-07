@@ -16,7 +16,7 @@
     <nav class="my-4 my-md-2 mr-md-6">
     <% if logged_in? %>
       <%= image_tag(current_user.profile_picture.url, height: '50') if current_user.profile_picture && current_user.profile_picture.url %>
-      <%= link_to "Profile", user_path(current_user.id), class: "btn btn-outline-danger btn-lg" %>
+      <%= link_to "プロフィール", user_path(current_user.id), class: "btn btn-outline-danger btn-lg" %>
       <%= link_to "Logout", session_path(current_user.id), method: :delete, class: "btn btn-outline-danger btn-lg" %>
     <% else %>
       <%= link_to "Sign up", new_user_path, class: "btn btn-outline-danger btn-lg" %>
