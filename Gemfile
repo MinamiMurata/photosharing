@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'dotenv-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
