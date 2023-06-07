@@ -17,7 +17,7 @@
             <p class="card-text"><%= favorite.picture.content %></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <%= link_to '確認', favorite, type: "button", class: "btn btn-outline-secondary" %>
+                <%= link_to '確認', picture_path(favorite.picture.id), type: "button", class: "btn btn-outline-secondary" %>
               </div>
             </div>
           </div>
