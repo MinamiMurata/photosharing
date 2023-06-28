@@ -27,6 +27,7 @@ gem 'dotenv-rails'
 gem 'faker'
 gem 'rexml'
 gem 'fog-aws'
+gem 'unicorn'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
