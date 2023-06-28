@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bcrypt'
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'dotenv-rails'
