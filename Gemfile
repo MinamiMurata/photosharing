@@ -26,6 +26,7 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'faker'
 gem 'rexml'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
